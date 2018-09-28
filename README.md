@@ -43,11 +43,11 @@ Online, browser based Multiplayer, Multiple Choice  Jeopardy Game
 ## Object Example
 Const yourPlanetMustGo = [
  { 
-  question: ‘lorem ipsum …’;
-  answer: ‘lorem ipsum….’;
-  wrongAnser1: 'lorem ipsum';
-  wrongAnswer2: 'lorem ipsum';
-  wrongAnswer3: 'Lorem ipsum'; 
+  question: ‘lorem ipsum …’,
+  answer: ‘lorem ipsum….’,
+  wrongAnser1: 'lorem ipsum',
+  wrongAnswer2: 'lorem ipsum',
+  wrongAnswer3: 'Lorem ipsum',
   Score: 200
 }
 ]
