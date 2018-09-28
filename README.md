@@ -53,9 +53,17 @@ Const yourPlanetMustGo = [
 ]
 Const 
 
+----
+##Categories:
 
-Categories:
-
+1. HTML
+2. CSS
+3. Javascript
+4. JQuery
+5. Command Line
+6. Code Quality 
+7. (optional) Python
+ 
 
 
 
