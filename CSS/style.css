@@ -1,0 +1,76 @@
+
+body{
+  background-image: url(../Images/download.jpeg);
+  background-size: cover;
+}
+.container{
+
+}
+#topics{
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 35px;
+  /* background: linear-gradient(#B8F9FF, cornsilk) */
+  background: linear-gradient( #22107F, #856DFF, #4521FF, #371ACC, #42377F);
+  color: #FFC71B;
+  text-shadow: 2px 2px 4px #000000;
+  text-align: center;
+  
+}
+
+.col-lg-2{
+  text-align: center;
+  border: 4px outset #AD701D;
+  padding: .5em 1em 1em 1em;
+  align-items: baseline;
+  letter-spacing: .1em;
+}
+
+.col-md-2{
+  text-align: center;
+  padding: 1em;
+  /* background-color: aquamarine; */
+  border: 4px outset #AD701D;
+  
+  
+}
+
+
+button{
+  justify-content: center;
+  padding: 15px;
+  border: 4px outset #E4C176; 
+  border-radius: 20px;
+  background: linear-gradient(#E02F63, rgba(224, 103, 87, .5), #E58960, rgba(225, 169, 157, .7),rgba(47, 77, 224, .4));
+  font-size: 25px;
+  text-shadow: 2px 2px 4px #000000;
+  color: #FFC71B;
+  letter-spacing: .2em;
+  font-family: 'Righteous', cursive;
+}
+
+#two{
+  background: linear-gradient(rgba(13, 64, 230, .3), rgba(115, 16, 172, .3), rgba(233, 31, 199, .3));
+}
+
+#four{
+  background: linear-gradient(rgba(13, 64, 230, .3), rgba(115, 16, 172, .3), rgba(233, 31, 199, .3));
+}
+
+#six{
+  background: linear-gradient(rgba(13, 64, 230, .3), rgba(115, 16, 172, .3), rgba(233, 31, 199, .3));
+}
+
+#eight{
+  background: linear-gradient(rgba(13, 64, 230, .3), rgba(115, 16, 172, .3), rgba(233, 31, 199, .3));
+}
+
+#ten{
+  background: linear-gradient(rgba(13, 64, 230, .3), rgba(115, 16, 172, .3), rgba(233, 31, 199, .3));
+}
+#startgame{
+display: block;
+text-align: center;
+margin: auto;
+ 
+  
+}
