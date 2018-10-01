@@ -39,13 +39,126 @@ const htmlQuestions = [
     wrongAnswer1: 'HTML elements',
     wrongAnswer2: 'Style attributes',
     wrongAnswer3: 'Event listeners',
-    value: 100
+    value: 1000
   }
   
 ];
 
+const cssQuestions = [
+  {
+    question: 'What does CSS stand for?',
+    correctAnswer: 'Cascading Style Sheets',
+    wrongAnswer1: 'Cascading Sheet Style',
+    wrongAnswer2: 'Computer Style Sheets',
+    wrongAnswer3: 'Cascading Styling Sheets',
+    value: 200
+  },
+  {
+    question: 'Which syntax is correct to select the food class?',
+    correctAnswer: '.food',
+    wrongAnswer1: '#food',
+    wrongAnswer2: '$food',
+    wrongAnswer3: 'food.',
+    value: 400
+  },
+  {
+    question: 'How do you insert a comment in a CSS file?',
+    correctAnswer: '/* this is a comment */',
+    wrongAnswer1: '// this is a comment //',
+    wrongAnswer2: '<!--this is a comment-->',
+    wrongAnswer3: '*/ this is a comment /*',
+    value: 600
+  },
+  {
+    question: 'Which one of these CSS properties can you use to give an element a linear-gradient background?',
+    correctAnswer: 'background-image',
+    wrongAnswer1: 'background-color',
+    wrongAnswer2: 'color',
+    wrongAnswer3: 'border-color',
+    value: 800
+  },
+  {
+    question: `Which of these lines of code will correctly style all elements with the ID 'menu'?`,
+    correctAnswer: `#menu{
+      color: black;
+      font-size: 35px;
+      display: flex;
+      justify-content: center;
+    }`,
+    wrongAnswer1: `.menu{
+      background-color: aqua;
+      width: 1000px;
+      display: flex;
+      align-content: center;
+    }`,
+    wrongAnswer2: `#menu{
+      color: black;
+      font/size: 35px
+      display: flex
+      justify/content: center;
+    }`,
+    wrongAnswer3: `menu{
+      color: black;
+      font-size: 35px;
+      display: flex;
+      justify-content: center;
+  }`,
+    value: 1000
+  }
 
+]
 
+const javascriptQuestions = [
+  {
+    question: `What is the result of the following code?  Number('9') === 9 `,
+    correctAnswer: `True`,
+    wrongAnswer1: `False`,
+    wrongAnswer2: `TypeError`,
+    wrongAnswer3: `Undefined`,
+    value:200
+  },
+  {
+    question: ` var myFood = ['apple', 'banana', 'pear'];
+                myArr.length = 0;
+                myArr.push('orange');
+                console.log(myArr);
+                Referencing the above code, what will be logged to the console?`,
+    correctAnswer: `['orange']`,
+    wrongAnswer1: `['apple', 'banana', 'pear']`,
+    wrongAnswer2: `['apple', 'banana', 'pear', 'orange']`,
+    wrongAnswer3: `['orange', 'apple', 'banana', 'pear']`,
+    value: 400
+  },
+  {
+    question: `Looking at the following code, what will be logged to the console?
+                const shoo = () =>{
+                  console.log('boohoo')
+                }
+                typeof (shoo)`,
+    correctAnswer: `function`,
+    wrongAnswer1: `NaN`,
+    wrongAnswer2: `True`,
+    wrongAnswer3: `Undefined`,
+    value: 600
+  },
+  {
+    question: `What is the result of this line of code?
+                false == 0 `,
+    correctAnswer:'True',
+    wrongAnswer1: 'False',
+    wrongAnswer2: 'Undefined',
+    wrongAnswer3: 'TypeError',
+    value: 800
+  },
+  {
+    question: `Which of the following id correct to write 'I love to code!' to the webpage?`, 
+    correctAnswer: ` document.write('I love to code!')`,
+    wrongAnswer1: ` System.out.printIn('I love to code!')`,
+    wrongAnswer2: ` print('I love to code!')`,
+    wrongAnswer3: ` response.write('I love to code!')`,
+    value: ``
+  },
+]
 
 
 
@@ -84,3 +197,8 @@ for (let i = 0; i < $button.length; i++) {
 
 
 bootbox.alert("Please click the spaceship to start the game.....");
+
+const foo = () => {
+  console.log('some');
+  return
+}
