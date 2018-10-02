@@ -389,11 +389,66 @@ $('#row1col2').click(function(){
   
 })
 $('#row1col3').click(function(){
-  bootbox.alert('this button works');
+ // bootbox.alert('this button works');
+  bootbox.prompt({
+    title: javascriptQuestions[0].question,
+    inputType: 'select',
+    inputOptions: [
+      {
+        text: javascriptQuestions[0].wrongAnswer2,
+        value: 2,
+      },
+      {
+        text: javascriptQuestions[0].wrongAnswer1,
+        value: 4,
+      },
+      {
+        text: javascriptQuestions[0].wrongAnswer3,
+        value: 3,
+      },
+      {
+        text: javascriptQuestions[0].correctAnswer,
+        value: 1,
+      }
+
+    ],
+    callback: function (result) {
+      console.log(result);
+    }
+  });
 })
+
 $('#row1col4').click(function(){
-  bootbox.alert('this button works');
+  // bootbox.alert('this button works');
+
+  bootbox.prompt({
+    title: jqueryQuestions[0].question,
+    inputType: 'select',
+    inputOptions: [
+      {
+        text: jqueryQuestions[0].correctAnswer,
+        value: 1,
+      },
+      {
+        text: jqueryQuestions[0].wrongAnswer2,
+        value: 2,
+      },
+      {
+        text: jqueryQuestions[0].wrongAnswer3,
+        value: 3,
+      },
+      {
+        text: jqueryQuestions[0].wrongAnswer1,
+        value: 4,
+      }
+
+    ],
+    callback: function (result) {
+      console.log(result);
+    }
+  });
 })
+
 $('#row1col5').click(function(){
   bootbox.alert('this button works');
 })

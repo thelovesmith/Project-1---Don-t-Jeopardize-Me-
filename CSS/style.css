@@ -103,6 +103,11 @@ h1{
   text-shadow: 2px 2px 4px #000000;
   
 }
+/* .modal-header{
+  margin: 0px;
+  
+  
+} */
 .modal-dialog{
   color: #FFC71B;
   font-size: 1.5em;
@@ -118,7 +123,7 @@ h1{
   border: .2em groove rgba(224, 103, 87, .5)
 }
 
-.bootbox-input.bootbox-input-checkbox{
-  
+/* .bootbox-input.bootbox-input-checkbox{
 
-}
+
+} */
