@@ -6,7 +6,7 @@ const htmlQuestions = [
     correctAnswer: 'Hyper Text Markup Language',
     wrongAnswer1: 'Hyperlinks and Text Markup Language',
     wrongAnswer2: 'Home Tool Markup Language',
-    wrongAnswer3: '',
+    wrongAnswer3: 'Hyper Text Marking Language',
     value: 200
   },
   {
@@ -160,7 +160,142 @@ const javascriptQuestions = [
   },
 ]
 
+const jqueryQuestions = [
+  {
+    question: ``,
+    correctAnswer: ``,
+    wrongAnswer1: ``,
+    wrongAnswer2: ``,
+    wrongAnswer3: ``,
+    value: 200
+  }, 
+  {
+    question: ``,
+    correctAnswer: ``,
+    wrongAnswer1: ``,
+    wrongAnswer2: ``,
+    wrongAnswer3: ``,
+    value: 400
+  }, 
+  {
+    question: ``,
+    correctAnswer: ``,
+    wrongAnswer1: ``,
+    wrongAnswer2: ``,
+    wrongAnswer3: ``,
+    value: 600
+  }, 
+  {
+    question: ``,
+    correctAnswer: ``,
+    wrongAnswer1: ``,
+    wrongAnswer2: ``,
+    wrongAnswer3: ``,
+    value: 800
+  }, 
+  {
+    question: ``,
+    correctAnswer: ``,
+    wrongAnswer1: ``,
+    wrongAnswer2: ``,
+    wrongAnswer3: ``,
+    value: 1000
+  }
+]
 
+const cliQuestions  = [
+  {
+    question: ``,
+    correctAnswer: ``,
+    wrongAnswer1: ``,
+    wrongAnswer2: ``,
+    wrongAnswer3: ``,
+    value: 200
+  },
+  {
+    question: ``,
+    correctAnswer: ``,
+    wrongAnswer1: ``,
+    wrongAnswer2: ``,
+    wrongAnswer3: ``,
+    value: 400
+  }, 
+  {
+   question: ``,
+   correctAnswer: ``,
+   wrongAnswer1: ``,
+   wrongAnswer2: ``,
+   wrongAnswer3: ``,
+   value: 600
+  }, 
+  {
+   question: ``,
+   correctAnswer: ``,
+   wrongAnswer1: ``,
+   wrongAnswer2: ``,
+   wrongAnswer3: ``,
+   value: 800
+  }, 
+  {
+   question: ``,
+   correctAnswer: ``,
+   wrongAnswer1: ``,
+   wrongAnswer2: ``,
+   wrongAnswer3: ``,
+   value: 1000
+  }
+]
+
+const codeQualityQuestions = [
+  {
+    question: ``,
+    correctAnswer: ``,
+    wrongAnswer1: ``,
+    wrongAnswer2: ``,
+    wrongAnswer3: ``,
+    value: 200
+  },
+  {
+    question: ``,
+    correctAnswer: ``,
+    wrongAnswer1: ``,
+    wrongAnswer2: ``,
+    wrongAnswer3: ``,
+    value: 400
+  },
+  {
+    question: ``,
+    correctAnswer: ``,
+    wrongAnswer1: ``,
+    wrongAnswer2: ``,
+    wrongAnswer3: ``,
+    value: 600
+  },
+  {
+    question: ``,
+    correctAnswer: ``,
+    wrongAnswer1: ``,
+    wrongAnswer2: ``,
+    wrongAnswer3: ``,
+    value: 800
+  },
+  {
+    question: ``,
+    correctAnswer: ``,
+    wrongAnswer1: ``,
+    wrongAnswer2: ``,
+    wrongAnswer3: ``,
+    value: 1000
+  }
+]
+
+
+const playerOne = {
+  score: 0
+};
+const playerTwo = {
+  score: 0 
+};
 
 //Functions for highlighting buttons when mouse passes over them using Vanilla JS//
 // function focusFunction() {
@@ -177,6 +312,7 @@ const javascriptQuestions = [
 // $example.mouseover(function(){
 //   $example.css('background', 'yellow');
 // })
+
 //For loops for buttons to highlight when mouse passes over them//
 let $button = $('button');
 for (let i = 0; i < $button.length; i++) {
@@ -191,6 +327,160 @@ for (let i = 0; i < $button.length; i++) {
 }
 
 
+$('#row1col1').click(function(){
+  // bootbox.alert('this button works');
+  bootbox.prompt({
+    title: htmlQuestions[0].question,
+    inputType: 'select',
+    inputOptions: [
+      {
+        text: htmlQuestions[0].wrongAnswer2,
+        value: 2,
+      },
+      {
+        text: htmlQuestions[0].wrongAnswer1,
+        value: 4,
+      },
+      {
+        text: htmlQuestions[0].wrongAnswer3,
+        value: 3,
+      },
+      {
+        text: htmlQuestions[0].correctAnswer,
+        value: 1,
+      }
+      
+    ],
+    callback: function (result) {
+      console.log(result);
+    }
+  });
+
+})
+
+$('#row1col2').click(function(){
+  //bootbox.alert('this button works');
+  bootbox.prompt({
+    title: cssQuestions[0].question,
+    inputType: 'select',
+    inputOptions: [
+      {
+        text: cssQuestions[0].wrongAnswer2,
+        value: 2,
+      },
+      {
+        text: cssQuestions[0].correctAnswer,
+        value: 1,
+      },
+      {
+        text: cssQuestions[0].wrongAnswer3,
+        value: 3,
+      },
+      {
+        text: cssQuestions[0].wrongAnswer1,
+        value: 4,
+      }
+
+    ],
+    callback: function (result) {
+      console.log(result);
+    }
+  });
+  
+})
+$('#row1col3').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row1col4').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row1col5').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row1col6').click(function(){
+  bootbox.alert('this button works');
+})
+
+
+$('#row2col1').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row2col2').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row2col3').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row2col4').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row2col5').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row2col6').click(function(){
+  bootbox.alert('this button works');
+})
+
+
+$('#row3col1').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row3col2').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row3col3').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row3col4').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row3col5').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row3col6').click(function(){
+  bootbox.alert('this button works');
+})
+
+
+$('#row4col1').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row4col2').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row4col3').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row4col4').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row4col5').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row4col6').click(function(){
+  bootbox.alert('this button works');
+})
+
+
+$('#row5col1').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row5col2').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row5col3').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row5col4').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row5col5').click(function(){
+  bootbox.alert('this button works');
+})
+$('#row5col6').click(function(){
+  bootbox.alert('this button works');
+})
+
 
 
 
@@ -198,7 +488,45 @@ for (let i = 0; i < $button.length; i++) {
 
 bootbox.alert("Please click the spaceship to start the game.....");
 
-const foo = () => {
-  console.log('some');
-  return
+
+
+
+//Start game function that is invoked when the alien spaceship Image is clicked//
+const startGame = () => {
+  console.log('The Game Has Started!!')
+  namePlayers()
 }
+
+
+//Function for invoking a prompt that lets the players put there names on the game board//
+const namePlayers = () => {
+  bootbox.prompt('PLayer 2, please enter your name:', function(result){
+    const $player2name = $('#player2 > h1');
+    $player2name.remove()
+    const $h1 = $('<h1/>')
+    $('#player2').prepend($h1);
+    $h1.append(result)
+  })
+  bootbox.prompt('Player 1, please enter our name:', function (result) {
+    const $player1name = $('#player1 > h1');
+    $player1name.remove()
+    const $h1 = $('<h1/>');
+    $('#player1').prepend($h1);
+    $h1.append(result)
+  })
+}
+
+
+//Event handlers and functions for Spaceship game start button//
+const $spaceship = $('#spaceship')
+$spaceship.click(startGame);
+$spaceship.mouseover(function(){
+  //function to highlight spaceship when mouse is over the image
+  $spaceship.css('background', 'linear-gradient(#E02F63, rgba(224, 103, 87, .2), #E58960, rgba(225, 169, 157, .1),rgba(47, 77, 224, .05))')
+})
+//function to reverse the above mouseover function
+$spaceship.mouseout(function(){
+  $spaceship.css('background', 'none');
+})
+
+
