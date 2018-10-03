@@ -11,10 +11,10 @@ const htmlQuestions = [
   },
   {
     question: 'Choose the correct HTML element for the largest heading',
-    correctAnswer: '<h1>',
-    wrongAnswer1: '<h6>',
-    wrongAnswer2: '<head>',
-    wrongAnswer3: '<heading>',
+    correctAnswer: '< h1 >',
+    wrongAnswer1: '< h6 >',
+    wrongAnswer2: '< head >',
+    wrongAnswer3: '< heading >',
     value: 400
   },
   {
@@ -27,10 +27,10 @@ const htmlQuestions = [
   },
   {
     question: 'What is the correct syntax to open a link in a new tab/browser window?',
-    correctAnswer: '<a href="url" target="_blank">',
-    wrongAnswer1: '<a href="url" target="new">',
-    wrongAnswer2: '<a href="url" new>',
-    wrongAnswer3: '<a href="url" src="_blank">',
+    correctAnswer: '< a href="url" target="_blank" >',
+    wrongAnswer1: '< a href="url" target="new" >',
+    wrongAnswer2: '< a href="url" new >',
+    wrongAnswer3: '< a href="url" src="_blank" >',
     value: 800
   },
   {
@@ -65,7 +65,7 @@ const cssQuestions = [
     question: 'How do you insert a comment in a CSS file?',
     correctAnswer: '/* this is a comment */',
     wrongAnswer1: '// this is a comment //',
-    wrongAnswer2: '<!--this is a comment-->',
+    wrongAnswer2: '< !--this is a comment-- >',
     wrongAnswer3: '*/ this is a comment /*',
     value: 600
   },
@@ -326,7 +326,7 @@ for (let i = 0; i < $button.length; i++) {
   })
 }
 
-
+//ROW 1
 $('#row1col1').click(function(){
   // bootbox.alert('this button works');
   bootbox.prompt({
@@ -456,12 +456,65 @@ $('#row1col6').click(function(){
   bootbox.alert('this button works');
 })
 
-
+//ROW 2
 $('#row2col1').click(function(){
-  bootbox.alert('this button works');
+  //bootbox.alert('this button works');
+  bootbox.prompt({
+    title: htmlQuestions[1].question,
+    inputType: 'select',
+    inputOptions: [
+      {
+        text: htmlQuestions[1].wrongAnswer2,
+        value: 2,
+      },
+      {
+        text: htmlQuestions[1].correctAnswer,
+        value: 1,
+      },
+      {
+        text: htmlQuestions[1].wrongAnswer3,
+        value: 3,
+      },
+      {
+        text: htmlQuestions[1].wrongAnswer1,
+        value: 4,
+      }
+
+    ],
+    callback: function (result) {
+      console.log(result);
+    }
+  });
+
 })
 $('#row2col2').click(function(){
-  bootbox.alert('this button works');
+  // bootbox.alert('this button works');
+  bootbox.prompt({
+    title: cssQuestions[1].question,
+    inputType: 'select',
+    inputOptions: [
+      {
+        text: cssQuestions[1].correctAnswer,
+        value: 1,
+      },
+      {
+        text: cssQuestions[1].wrongAnswer2,
+        value: 2,
+      },
+      {
+        text: cssQuestions[1].wrongAnswer3,
+        value: 3,
+      },
+      {
+        text: cssQuestions[1].wrongAnswer1,
+        value: 4,
+      }
+
+    ],
+    callback: function (result) {
+      console.log(result);
+    }
+  });
 })
 $('#row2col3').click(function(){
   bootbox.alert('this button works');
@@ -476,12 +529,64 @@ $('#row2col6').click(function(){
   bootbox.alert('this button works');
 })
 
-
+//ROW 3
 $('#row3col1').click(function(){
-  bootbox.alert('this button works');
+  // bootbox.alert('this button works');
+  bootbox.prompt({
+    title: htmlQuestions[2].question,
+    inputType: 'select',
+    inputOptions: [
+      {
+        text: htmlQuestions[2].correctAnswer,
+        value: 1
+      },
+      {
+        text: htmlQuestions[2].wrongAnswer1,
+        value: 4,
+      },
+      {
+        text: htmlQuestions[2].wrongAnswer3,
+        value: 3,
+      },
+      {
+        text: htmlQuestions[2].wrongAnswer2,
+        value: 2,
+      }
+
+    ],
+    callback: function (result) {
+      console.log(result);
+    }
+  });
 })
 $('#row3col2').click(function(){
-  bootbox.alert('this button works');
+  // bootbox.alert('this button works');
+  bootbox.prompt({
+    title: cssQuestions[2].question,
+    inputType: 'select',
+    inputOptions: [
+      {
+        text: cssQuestions[2].wrongAnswer2,
+        value: 2,
+      },
+      {
+        text: cssQuestions[2].wrongAnswer1,
+        value: 4,
+      },
+      {
+        text: cssQuestions[2].wrongAnswer3,
+        value: 3,
+      },
+      {
+        text: cssQuestions[2].correctAnswer,
+        value: 1,
+      }
+
+    ],
+    callback: function (result) {
+      console.log(result);
+    }
+  });
 })
 $('#row3col3').click(function(){
   bootbox.alert('this button works');
@@ -496,12 +601,64 @@ $('#row3col6').click(function(){
   bootbox.alert('this button works');
 })
 
-
+//ROW 4
 $('#row4col1').click(function(){
-  bootbox.alert('this button works');
+  // bootbox.alert('this button works');
+  bootbox.prompt({
+    title: htmlQuestions[3].question,
+    inputType: 'select',
+    inputOptions: [
+      {
+        text: htmlQuestions[3].wrongAnswer2,
+        value: 2,
+      },
+      {
+        text: htmlQuestions[3].wrongAnswer1,
+        value: 4,
+      },
+      {
+        text: htmlQuestions[3].wrongAnswer3,
+        value: 3,
+      },
+      {
+        text: htmlQuestions[3].correctAnswer,
+        value: 1,
+      }
+
+    ],
+    callback: function (result) {
+      console.log(result);
+    }
+  });
 })
 $('#row4col2').click(function(){
-  bootbox.alert('this button works');
+  // bootbox.alert('this button works');
+  bootbox.prompt({
+    title: cssQuestions[3].question,
+    inputType: 'select',
+    inputOptions: [
+      {
+        text: cssQuestions[3].wrongAnswer2,
+        value: 2,
+      },
+      {
+        text: cssQuestions[3].correctAnswer,
+        value: 1,
+      },
+      {
+        text: cssQuestions[3].wrongAnswer3,
+        value: 3,
+      },
+      {
+        text: cssQuestions[3].wrongAnswer1,
+        value: 4,
+      }
+
+    ],
+    callback: function (result) {
+      console.log(result);
+    }
+  });
 })
 $('#row4col3').click(function(){
   bootbox.alert('this button works');
@@ -516,12 +673,64 @@ $('#row4col6').click(function(){
   bootbox.alert('this button works');
 })
 
-
+//ROW 5
 $('#row5col1').click(function(){
-  bootbox.alert('this button works');
+  // bootbox.alert('this button works');
+  bootbox.prompt({
+    title: htmlQuestions[4].question,
+    inputType: 'select',
+    inputOptions: [
+      {
+        text: htmlQuestions[4].wrongAnswer2,
+        value: 2,
+      },
+      {
+        text: htmlQuestions[4].correctAnswer,
+        value: 4,
+      },
+      {
+        text: htmlQuestions[4].wrongAnswer3,
+        value: 3,
+      },
+      {
+        text: htmlQuestions[4].wrongAnswer1,
+        value: 1,
+      }
+
+    ],
+    callback: function (result) {
+      console.log(result);
+    }
+  });
 })
 $('#row5col2').click(function(){
-  bootbox.alert('this button works');
+  // bootbox.alert('this button works');
+  bootbox.prompt({
+    title: cssQuestions[4].question,
+    inputType: 'select',
+    inputOptions: [
+      {
+        text: cssQuestions[4].wrongAnswer2,
+        value: 2,
+      },
+      {
+        text: cssQuestions[4].wrongAnswer1,
+        value: 4,
+      },
+      {
+        text: cssQuestions[4].wrongAnswer3,
+        value: 3,
+      },
+      {
+        text: cssQuestions[4].correctAnswer,
+        value: 1,
+      }
+
+    ],
+    callback: function (result) {
+      console.log(result);
+    }
+  });
 })
 $('#row5col3').click(function(){
   bootbox.alert('this button works');
