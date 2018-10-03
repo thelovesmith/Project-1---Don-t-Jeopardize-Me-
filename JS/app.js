@@ -1,5 +1,8 @@
-console.log('JS is active')
-
+//Alert to inform users how to start the game//
+bootbox.alert("Please click the spaceship to start the game.....");
+  
+////////////////////////////////////////////////////////////
+//Arrays holding question objects//
 const htmlQuestions = [
   {
     question: 'What does HTML stand for?',
@@ -291,15 +294,20 @@ const codeQualityQuestions = [
   }
 ]
 
+  ////////////////////////////////////////////////////////////  ////////////////////////////////////////////////////////////  ////////////////////////////////////////////////////////////
 
+//Player objects//
 const playerOne = {
   score: 0
+
 };
 const playerTwo = {
   score: 0 
 };
 
-
+  ////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////
+      ////////////////////////////////////////////////////////////
 
 //For loops for buttons to highlight when mouse passes over them//
 let $button = $('button');
@@ -313,6 +321,10 @@ for (let i = 0; i < $button.length; i++) {
     $($button[i]).css('background', 'linear-gradient(#E02F63, rgba(224, 103, 87, .5), #E58960, rgba(225, 169, 157, .7),rgba(47, 77, 224, .4))');
   })
 }
+  ////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////
+      ////////////////////////////////////////////////////////////
+
 
 //When this function is invoked the buttons on the game board are activated and can be clicked by the user to produce a bootbox prompt which displays the questions on the screen// 
 const clickQuestions = () => {
@@ -338,15 +350,21 @@ const clickQuestions = () => {
         },
         {
           text: htmlQuestions[0].correctAnswer,
-          value: 1,
+          value: 200,
         }
         
       ],
       callback: function (result) {
-        console.log(result);
+        result = parseInt(result)
+        // console.log(result);
+        if (result === 200) {
+          playerOne.score += result
+          $('#player2 > h3').text(playerOne.score)
+          // $('#row1col1').css('background', 'linear-gradient(rgba(224, 47, 99, .1), rgba(224, 103, 87, .2), #E58960, rgba(225, 169, 157, .3),rgba(47, 77, 224, .1))')
+        }
       }
     });
-
+   
   })
   //css
   $('#row1col2').click(function(){
@@ -361,7 +379,7 @@ const clickQuestions = () => {
         },
         {
           text: cssQuestions[0].correctAnswer,
-          value: 1,
+          value: 200,
         },
         {
           text: cssQuestions[0].wrongAnswer3,
@@ -374,7 +392,12 @@ const clickQuestions = () => {
 
       ],
       callback: function (result) {
-        console.log(result);
+        result = parseInt(result)
+        // console.log(result);
+        if (result === 200) {
+          playerOne.score += result
+          $('#player2 > h3').text(playerOne.score)
+        }
       }
     });
     
@@ -400,12 +423,17 @@ const clickQuestions = () => {
         },
         {
           text: javascriptQuestions[0].correctAnswer,
-          value: 1,
+          value: 200,
         }
 
       ],
       callback: function (result) {
-        console.log(result);
+        // console.log(result);
+        result = parseInt(result)
+        if (result === 200) {
+          playerOne.score += result
+          $('#player2 > h3').text(playerOne.score)
+        }
       }
     });
   })
@@ -419,7 +447,7 @@ const clickQuestions = () => {
       inputOptions: [
         {
           text: jqueryQuestions[0].correctAnswer,
-          value: 1,
+          value: 200,
         },
         {
           text: jqueryQuestions[0].wrongAnswer2,
@@ -436,17 +464,84 @@ const clickQuestions = () => {
 
       ],
       callback: function (result) {
-        console.log(result);
+        result = parseInt(result)
+        // console.log(result);
+        if (result === 200) {
+          playerOne.score += result
+          $('#player2 > h3').text(playerOne.score)
+        }
       }
     });
   })
   //cli
   $('#row1col5').click(function(){
-    bootbox.alert('this button works');
+    // bootbox.alert('this button works');
+    bootbox.prompt({
+      title: cliQuestions[0].question,
+      inputType: 'select',
+      inputOptions: [
+        {
+          text: cliQuestions[0].correctAnswer,
+          value: 200,
+        },
+        {
+          text: cliQuestions[0].wrongAnswer2,
+          value: 2,
+        },
+        {
+          text: cliQuestions[0].wrongAnswer3,
+          value: 3,
+        },
+        {
+          text: cliQuestions[0].wrongAnswer1,
+          value: 4,
+        }
+
+      ],
+      callback: function (result) {
+        result = parseInt(result)
+        // console.log(result);
+        if (result === 200) {
+          playerOne.score += result
+          $('#player2 > h3').text(playerOne.score)
+        }
+      }
+    });
   })
   //code quality
   $('#row1col6').click(function(){
-    bootbox.alert('this button works');
+    // bootbox.alert('this button works');
+    bootbox.prompt({
+      title: codeQualityQuestions[0].question,
+      inputType: 'select',
+      inputOptions: [
+        {
+          text: codeQualityQuestions[0].wrongAnswer3,
+          value: 3,
+        },
+        {
+          text: codeQualityQuestions[0].wrongAnswer2,
+          value: 2,
+        },
+        {
+          text: codeQualityQuestions[0].correctAnswer,
+          value: 200,
+        },
+        {
+          text: codeQualityQuestions[0].wrongAnswer1,
+          value: 4,
+        }
+
+      ],
+      callback: function (result) {
+        result = parseInt(result)
+        // console.log(result);
+        if (result === 200) {
+          playerOne.score += result
+          $('#player2 > h3').text(playerOne.score)
+        }
+      }
+    });
   })
 
   ////////////////////////////////////////////////////////////
@@ -466,7 +561,7 @@ const clickQuestions = () => {
         },
         {
           text: htmlQuestions[1].correctAnswer,
-          value: 1,
+          value: 400,
         },
         {
           text: htmlQuestions[1].wrongAnswer3,
@@ -479,7 +574,12 @@ const clickQuestions = () => {
 
       ],
       callback: function (result) {
-        console.log(result);
+        result = parseInt(result)
+        // console.log(result);
+        if (result === 400) {
+          playerOne.score += result
+          $('#player2 > h3').text(playerOne.score)
+        }
       }
     });
 
@@ -493,7 +593,7 @@ const clickQuestions = () => {
       inputOptions: [
         {
           text: cssQuestions[1].correctAnswer,
-          value: 1,
+          value: 400,
         },
         {
           text: cssQuestions[1].wrongAnswer2,
@@ -510,25 +610,154 @@ const clickQuestions = () => {
 
       ],
       callback: function (result) {
-        console.log(result);
+        result = parseInt(result)
+        // console.log(result);
+        if (result === 400) {
+          playerOne.score += result
+          $('#player2 > h3').text(playerOne.score)
+        }
       }
     });
   })
   //javascript
   $('#row2col3').click(function(){
-    bootbox.alert('this button works');
+    // bootbox.alert('this button works');
+    bootbox.prompt({
+      title: javascriptQuestions[1].question,
+      inputType: 'select',
+      inputOptions: [
+        {
+          text: javascriptQuestions[1].wrongAnswer1,
+          value: 4,
+        },
+        {
+          text: javascriptQuestions[1].wrongAnswer2,
+          value: 2,
+        },
+        {
+          text: javascriptQuestions[1].wrongAnswer3,
+          value: 3,
+        },
+        {
+          text: javascriptQuestions[1].correctAnswer,
+          value: 400,
+        }
+
+      ],
+      callback: function (result) {
+        result = parseInt(result)
+        // console.log(result);
+        if (result === 400) {
+          playerOne.score += result
+          $('#player2 > h3').text(playerOne.score)
+        }
+      }
+    });
   })
   //jquery
   $('#row2col4').click(function(){
-    bootbox.alert('this button works');
+    // bootbox.alert('this button works');
+    bootbox.prompt({
+      title: jqueryQuestions[1].question,
+      inputType: 'select',
+      inputOptions: [
+        {
+          text: jqueryQuestions[1].correctAnswer,
+          value: 400,
+        },
+        {
+          text: jqueryQuestions[1].wrongAnswer2,
+          value: 2,
+        },
+        {
+          text: jqueryQuestions[1].wrongAnswer3,
+          value: 3,
+        },
+        {
+          text: jqueryQuestions[1].wrongAnswer1,
+          value: 4,
+        }
+
+      ],
+      callback: function (result) {
+        result = parseInt(result)
+        // console.log(result);
+        if (result === 400) {
+          playerOne.score += result
+          $('#player2 > h3').text(playerOne.score)
+        }
+      }
+    });
   })
   //cli
   $('#row2col5').click(function(){
-    bootbox.alert('this button works');
+    // bootbox.alert('this button works');
+    bootbox.prompt({
+      title: cliQuestions[1].question,
+      inputType: 'select',
+      inputOptions: [
+        {
+          text: cliQuestions[1].wrongAnswer2,
+          value: 2,
+        },
+        {
+          text: cliQuestions[1].correctAnswer,
+          value: 400,
+        },
+        {
+          text: cliQuestions[1].wrongAnswer3,
+          value: 3,
+        },
+        {
+          text: cliQuestions[1].wrongAnswer1,
+          value: 4,
+        }
+
+      ],
+      callback: function (result) {
+        result = parseInt(result)
+        // console.log(result);
+        if (result === 400) {
+          playerOne.score += result
+          $('#player2 > h3').text(playerOne.score)
+        }
+      }
+    });
   })
   //code quality
   $('#row2col6').click(function(){
-    bootbox.alert('this button works');
+    // bootbox.alert('this button works');
+    bootbox.prompt({
+      title: codeQualityQuestions[1].question,
+      inputType: 'select',
+      inputOptions: [
+        {
+          text: codeQualityQuestions[1].wrongAnswer2,
+          value: 2,
+        },
+        {
+          text: codeQualityQuestions[1].wrongAnswer1,
+          value: 4,
+        },
+        {
+          text: codeQualityQuestions[1].wrongAnswer3,
+          value: 3,
+        },
+        {
+          text: codeQualityQuestions[1].correctAnswer,
+          value: 400,
+        }
+
+      ],
+      callback: function (result) {
+        result = parseInt(result)
+        // console.log(result);
+        if (result === 400) {
+          playerOne.score += result
+          $('#player2 > h3').text(playerOne.score)
+        }
+      }
+    });
   })
 
   ////////////////////////////////////////////////////////////
@@ -545,7 +774,7 @@ const clickQuestions = () => {
       inputOptions: [
         {
           text: htmlQuestions[2].correctAnswer,
-          value: 1
+          value: 600
         },
         {
           text: htmlQuestions[2].wrongAnswer1,
@@ -561,8 +790,12 @@ const clickQuestions = () => {
         }
 
       ],
-      callback: function (result) {
-        console.log(result);
+      callback: function (result) {      
+        result = parseInt(result)
+        if (result === 600) {
+          playerOne.score += result
+          $('#player2 > h3').text(playerOne.score)
+        }
       }
     });
   })
@@ -592,25 +825,150 @@ const clickQuestions = () => {
 
       ],
       callback: function (result) {
-        console.log(result);
+        result = parseInt(result)
+        if (result === 600) {
+          playerOne.score += result
+          $('#player2 > h3').text(playerOne.score)
+        }
       }
     });
   })
   //javascript
   $('#row3col3').click(function(){
-    bootbox.alert('this button works');
+    // bootbox.alert('this button works');
+    bootbox.prompt({
+      title: javascriptQuestions[2].question,
+      inputType: 'select',
+      inputOptions: [
+        {
+          text: javascriptQuestions[2].correctAnswer,
+          value: 600
+        },
+        {
+          text: javascriptQuestions[2].wrongAnswer1,
+          value: 4,
+        },
+        {
+          text: javascriptQuestions[2].wrongAnswer3,
+          value: 3,
+        },
+        {
+          text: javascriptQuestions[2].wrongAnswer2,
+          value: 2,
+        }
+
+      ],
+      callback: function (result) {
+        result = parseInt(result)
+        if (result === 600) {
+          playerOne.score += result
+          $('#player2 > h3').text(playerOne.score)
+        }
+      }
+    });  
   })
   //jquery
   $('#row3col4').click(function(){
-    bootbox.alert('this button works');
+    // bootbox.alert('this button works');
+    bootbox.prompt({
+      title: jqueryQuestions[2].question,
+      inputType: 'select',
+      inputOptions: [
+        {
+          text: jqueryQuestions[2].wrongAnswer3,
+          value: 3, 
+        },
+        {
+          text: jqueryQuestions[2].wrongAnswer1,
+          value: 4,
+        },
+        {
+          text: jqueryQuestions[2].correctAnswer,
+          value: 600,
+        },
+        {
+          text: jqueryQuestions[2].wrongAnswer2,
+          value: 2,
+        }
+
+      ],
+      callback: function (result) {
+        result = parseInt(result)
+        if (result === 600) {
+          playerOne.score += result
+          $('#player2 > h3').text(playerOne.score)
+        }
+      }
+    });  
+
   })
   //cli
   $('#row3col5').click(function(){
-    bootbox.alert('this button works');
+    // bootbox.alert('this button works');
+    bootbox.prompt({
+      title: cliQuestions[2].question,
+      inputType: 'select',
+      inputOptions: [
+        {
+          text: cliQuestions[2].correctAnswer,
+          value: 600
+        },
+        {
+          text: cliQuestions[2].wrongAnswer1,
+          value: 4,
+        },
+        {
+          text: cliQuestions[2].wrongAnswer3,
+          value: 3,
+        },
+        {
+          text: cliQuestions[2].wrongAnswer2,
+          value: 2,
+        }
+
+      ],
+      callback: function (result) {
+        result = parseInt(result)
+        if (result === 600) {
+          playerOne.score += result
+          $('#player2 > h3').text(playerOne.score)
+        }
+      }
+    });  
   })
   //code quality
   $('#row3col6').click(function(){
-    bootbox.alert('this button works');
+    // bootbox.alert('this button works');
+    bootbox.prompt({
+      title: codeQualityQuestions[2].question,
+      inputType: 'select',
+      inputOptions: [
+        {
+          text: codeQualityQuestions[2].wrongAnswer3,
+          value: 3,
+        },
+        {
+          text: codeQualityQuestions[2].wrongAnswer1,
+          value: 4,
+        },
+        {
+          text: codeQualityQuestions[2].correctAnswer,
+          value: 600,
+        },
+        {
+          text: codeQualityQuestions[2].wrongAnswer2,
+          value: 2,
+        }
+
+      ],
+      callback: function (result) {
+        result = parseInt(result)
+        if (result === 600) {
+          playerOne.score += result
+          $('#player2 > h3').text(playerOne.score)
+        }
+      }
+    });  
   })
 
   ////////////////////////////////////////////////////////////
@@ -639,12 +997,16 @@ const clickQuestions = () => {
         },
         {
           text: htmlQuestions[3].correctAnswer,
-          value: 1,
+          value: 800,
         }
 
       ],
       callback: function (result) {
-        console.log(result);
+        result = parseInt(result)
+        if (result === 800) {
+          playerOne.score += result
+          $('#player2 > h3').text(playerOne.score)
+        }
       }
     });
   })
@@ -661,7 +1023,7 @@ const clickQuestions = () => {
         },
         {
           text: cssQuestions[3].correctAnswer,
-          value: 1,
+          value: 800,
         },
         {
           text: cssQuestions[3].wrongAnswer3,
@@ -674,25 +1036,33 @@ const clickQuestions = () => {
 
       ],
       callback: function (result) {
-        console.log(result);
+        result = parseInt(result)
+        if (result === 800) {
+          playerOne.score += result
+          $('#player2 > h3').text(playerOne.score)
+        }
       }
     });
   })
   //javascript
   $('#row4col3').click(function(){
-    bootbox.alert('this button works');
+    // bootbox.alert('this button works');
+
   })
   //jquery
   $('#row4col4').click(function(){
-    bootbox.alert('this button works');
+    // bootbox.alert('this button works');
+
   })
   //cli
   $('#row4col5').click(function(){
-    bootbox.alert('this button works');
+    // bootbox.alert('this button works');
+
   })
   //code quality
   $('#row4col6').click(function(){
-    bootbox.alert('this button works');
+    // bootbox.alert('this button works');
+
   })
 
   ////////////////////////////////////////////////////////////
@@ -776,13 +1146,13 @@ const clickQuestions = () => {
   $('#row5col6').click(function(){
     bootbox.alert('this button works');
   })
+
 }
 
 
 
 
-//Alert to inform users how to start the game//
-bootbox.alert("Please click the spaceship to start the game.....");
+
 
 
 
@@ -808,6 +1178,13 @@ const namePlayers = () => {
   })
 }
 
+//Start game function that is invoked when the alien spaceship Image is clicked//
+const startGame = () => {
+  console.log('The Game Has Started!!')
+  namePlayers()
+  clickQuestions()
+}
+
 
 //Event handlers and functions for Spaceship game start button//
 const $spaceship = $('#spaceship')
@@ -822,12 +1199,7 @@ $spaceship.mouseout(function(){
 })
 
 
-//Start game function that is invoked when the alien spaceship Image is clicked//
-const startGame = () => {
-  console.log('The Game Has Started!!')
-  namePlayers()
-  clickQuestions()
-}
+
 
 
 
