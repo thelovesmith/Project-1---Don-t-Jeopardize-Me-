@@ -202,7 +202,7 @@ const jqueryQuestions = [
     correctAnswer: `All p elements inside a div element`,
     wrongAnswer1: `The first p element inside a div element`,
     wrongAnswer2: `All div elements with a p element`,
-    wrongAnswer3: ``,
+    wrongAnswer3: `The first div element with a p element`,
     value: 1000
   }
 ]
@@ -298,29 +298,22 @@ const codeQualityQuestions = [
 
 //Player objects//
 const playerOne = {
-  score: 0
+  score: 0,
+  order: 0,
+  name: ''
 
 };
 const playerTwo = {
-  score: 0 
+  score: 0,
+  order: 0,
+  name: '' 
 };
 
   ////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////
       ////////////////////////////////////////////////////////////
 
-//For loops for buttons to highlight when mouse passes over them//
-let $button = $('button');
-for (let i = 0; i < $button.length; i++) {
-  $($button[i]).mouseover(function () {
-    $($button[i]).css('background', 'linear-gradient( #22107F, #856DFF, #4521FF, #371ACC, #42377F)');
-  })
-}
-for (let i = 0; i < $button.length; i++) {
-  $($button[i]).mouseout(function () {
-    $($button[i]).css('background', 'linear-gradient(#E02F63, rgba(224, 103, 87, .5), #E58960, rgba(225, 169, 157, .7),rgba(47, 77, 224, .4))');
-  })
-}
+
   ////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////
       ////////////////////////////////////////////////////////////
@@ -359,8 +352,8 @@ const clickQuestions = () => {
         // console.log(result);
         if (result === 200) {
           playerOne.score += result
-          $('#player2 > h3').text(playerOne.score)
-          // $('#row1col1').css('background', 'linear-gradient(rgba(224, 47, 99, .1), rgba(224, 103, 87, .2), #E58960, rgba(225, 169, 157, .3),rgba(47, 77, 224, .1))')
+          $('#player1 > h3').text(playerOne.score)
+          $('#row1col1').hide() 
         }
       }
     });
@@ -396,7 +389,9 @@ const clickQuestions = () => {
         // console.log(result);
         if (result === 200) {
           playerOne.score += result
-          $('#player2 > h3').text(playerOne.score)
+          $('#player1 > h3').text(playerOne.score)
+          $('#row1col2').hide() 
+
         }
       }
     });
@@ -432,7 +427,9 @@ const clickQuestions = () => {
         result = parseInt(result)
         if (result === 200) {
           playerOne.score += result
-          $('#player2 > h3').text(playerOne.score)
+          $('#player1 > h3').text(playerOne.score)
+          $('#row1col3').hide() 
+
         }
       }
     });
@@ -468,7 +465,9 @@ const clickQuestions = () => {
         // console.log(result);
         if (result === 200) {
           playerOne.score += result
-          $('#player2 > h3').text(playerOne.score)
+          $('#player1 > h3').text(playerOne.score)
+          $('#row1col4').hide() 
+
         }
       }
     });
@@ -503,7 +502,9 @@ const clickQuestions = () => {
         // console.log(result);
         if (result === 200) {
           playerOne.score += result
-          $('#player2 > h3').text(playerOne.score)
+          $('#player1 > h3').text(playerOne.score)
+          $('#row1col5').hide() 
+
         }
       }
     });
@@ -538,7 +539,9 @@ const clickQuestions = () => {
         // console.log(result);
         if (result === 200) {
           playerOne.score += result
-          $('#player2 > h3').text(playerOne.score)
+          $('#player1 > h3').text(playerOne.score)
+          $('#row1col6').hide() 
+
         }
       }
     });
@@ -578,7 +581,8 @@ const clickQuestions = () => {
         // console.log(result);
         if (result === 400) {
           playerOne.score += result
-          $('#player2 > h3').text(playerOne.score)
+          $('#player1 > h3').text(playerOne.score)
+          $('#row2col1').hide() 
         }
       }
     });
@@ -614,7 +618,8 @@ const clickQuestions = () => {
         // console.log(result);
         if (result === 400) {
           playerOne.score += result
-          $('#player2 > h3').text(playerOne.score)
+          $('#player1 > h3').text(playerOne.score)
+          $('#row2col2').hide() 
         }
       }
     });
@@ -649,7 +654,8 @@ const clickQuestions = () => {
         // console.log(result);
         if (result === 400) {
           playerOne.score += result
-          $('#player2 > h3').text(playerOne.score)
+          $('#player1 > h3').text(playerOne.score)
+          $('#row2col3').hide() 
         }
       }
     });
@@ -684,7 +690,8 @@ const clickQuestions = () => {
         // console.log(result);
         if (result === 400) {
           playerOne.score += result
-          $('#player2 > h3').text(playerOne.score)
+          $('#player1 > h3').text(playerOne.score)
+          $('#row2col4').hide() 
         }
       }
     });
@@ -719,7 +726,8 @@ const clickQuestions = () => {
         // console.log(result);
         if (result === 400) {
           playerOne.score += result
-          $('#player2 > h3').text(playerOne.score)
+          $('#player1 > h3').text(playerOne.score)
+          $('#row2col5').hide() 
         }
       }
     });
@@ -754,7 +762,8 @@ const clickQuestions = () => {
         // console.log(result);
         if (result === 400) {
           playerOne.score += result
-          $('#player2 > h3').text(playerOne.score)
+          $('#player1 > h3').text(playerOne.score)
+          $('#row2col6').hide() 
         }
       }
     });
@@ -794,7 +803,8 @@ const clickQuestions = () => {
         result = parseInt(result)
         if (result === 600) {
           playerOne.score += result
-          $('#player2 > h3').text(playerOne.score)
+          $('#player1 > h3').text(playerOne.score)
+          $('#row3col1').hide() 
         }
       }
     });
@@ -828,7 +838,8 @@ const clickQuestions = () => {
         result = parseInt(result)
         if (result === 600) {
           playerOne.score += result
-          $('#player2 > h3').text(playerOne.score)
+          $('#player1 > h3').text(playerOne.score)
+          $('#row3col2').hide() 
         }
       }
     });
@@ -862,7 +873,8 @@ const clickQuestions = () => {
         result = parseInt(result)
         if (result === 600) {
           playerOne.score += result
-          $('#player2 > h3').text(playerOne.score)
+          $('#player1 > h3').text(playerOne.score)
+          $('#row3col3').hide() 
         }
       }
     });  
@@ -896,7 +908,8 @@ const clickQuestions = () => {
         result = parseInt(result)
         if (result === 600) {
           playerOne.score += result
-          $('#player2 > h3').text(playerOne.score)
+          $('#player1 > h3').text(playerOne.score)
+          $('#row3col4').hide() 
         }
       }
     });  
@@ -931,7 +944,8 @@ const clickQuestions = () => {
         result = parseInt(result)
         if (result === 600) {
           playerOne.score += result
-          $('#player2 > h3').text(playerOne.score)
+          $('#player1 > h3').text(playerOne.score)
+          $('#row3col5').hide() 
         }
       }
     });  
@@ -965,7 +979,8 @@ const clickQuestions = () => {
         result = parseInt(result)
         if (result === 600) {
           playerOne.score += result
-          $('#player2 > h3').text(playerOne.score)
+          $('#player1 > h3').text(playerOne.score)
+          $('#row3col6').hide() 
         }
       }
     });  
@@ -1005,7 +1020,8 @@ const clickQuestions = () => {
         result = parseInt(result)
         if (result === 800) {
           playerOne.score += result
-          $('#player2 > h3').text(playerOne.score)
+          $('#player1 > h3').text(playerOne.score)
+          $('#row4col1').hide() 
         }
       }
     });
@@ -1039,7 +1055,8 @@ const clickQuestions = () => {
         result = parseInt(result)
         if (result === 800) {
           playerOne.score += result
-          $('#player2 > h3').text(playerOne.score)
+          $('#player1 > h3').text(playerOne.score)
+          $('#row4col2').hide() 
         }
       }
     });
@@ -1047,22 +1064,150 @@ const clickQuestions = () => {
   //javascript
   $('#row4col3').click(function(){
     // bootbox.alert('this button works');
+    bootbox.prompt({
+      title: javascriptQuestions[3].question,
+      inputType: 'select',
+      inputOptions: [
+        {
+          text: javascriptQuestions[3].wrongAnswer2,
+          value: 2,
+        },
+        {
+          text: javascriptQuestions[3].wrongAnswer1,
+          value: 4,
+        },
+        {
+          text: javascriptQuestions[3].wrongAnswer3,
+          value: 3,
+        },
+        {
+          text: javascriptQuestions[3].correctAnswer,
+          value: 800,
+        }
 
+      ],
+      callback: function (result) {
+        result = parseInt(result)
+        if (result === 800) {
+          playerOne.score += result
+          $('#player1 > h3').text(playerOne.score)
+          $('#row4col3').hide() 
+        }
+      }
+    });
   })
   //jquery
   $('#row4col4').click(function(){
     // bootbox.alert('this button works');
+    bootbox.prompt({
+      title: jqueryQuestions[3].question,
+      inputType: 'select',
+      inputOptions: [
+        {
+          text: jqueryQuestions[3].wrongAnswer2,
+          value: 2,
+        },
+        {
+          text: jqueryQuestions[3].correctAnswer,
+          value: 800,
+        },
+        {
+          text: jqueryQuestions[3].wrongAnswer3,
+          value: 3,
+        },
+        {
+          text: jqueryQuestions[3].wrongAnswer1,
+          value: 4,
+        }
 
+      ],
+      callback: function (result) {
+        result = parseInt(result)
+        if (result === 800) {
+          playerOne.score += result
+          $('#player1 > h3').text(playerOne.score)
+          $('#row4col4').hide() 
+        }
+      }
+    });
   })
   //cli
   $('#row4col5').click(function(){
     // bootbox.alert('this button works');
+    bootbox.prompt({
+      title: cliQuestions[3].question,
+      inputType: 'select',
+      inputOptions: [
+        {
+          text: cliQuestions[3].correctAnswer,
+          value: 800,
+        },
+        {
+          text: cliQuestions[3].wrongAnswer2,
+          value: 1,
+        },
+        {
+          text: cliQuestions[3].wrongAnswer3,
+          value: 3,
+        },
+        {
+          text: cliQuestions[3].wrongAnswer1,
+          value: 4,
+        },
+        {
+          text: 'None of the above',
+          value: 5,
+        }
 
+      ],
+      callback: function (result) {
+        result = parseInt(result)
+        if (result === 800) {
+          playerOne.score += result
+          $('#player1 > h3').text(playerOne.score)
+          $('#row4col5').hide() 
+        }
+      }
+    });
   })
   //code quality
   $('#row4col6').click(function(){
     // bootbox.alert('this button works');
+    bootbox.prompt({
+      title: codeQualityQuestions[3].question,
+      inputType: 'select',
+      inputOptions: [
+        {
+          text: codeQualityQuestions[3].wrongAnswer2,
+          value: 2,
+        },
+        {
+          text: codeQualityQuestions[3].wrongAnswer3,
+          value: 3,
+        },
+        {
+          text: codeQualityQuestions[3].correctAnswer,
+          value: 800,
+        },
+        {
+          text: codeQualityQuestions[3].wrongAnswer1,
+          value: 4,
+        },
+        {
+          text: 'None of the above',
+          value: 5,
+        }
 
+      ],
+      callback: function (result) {
+        result = parseInt(result)
+        if (result === 800) {
+          playerOne.score += result
+          $('#player1 > h3').text(playerOne.score)
+          $('#row4col6').hide() 
+        }
+      }
+    });
   })
 
   ////////////////////////////////////////////////////////////
@@ -1083,7 +1228,7 @@ const clickQuestions = () => {
         },
         {
           text: htmlQuestions[4].correctAnswer,
-          value: 4,
+          value: 1000,
         },
         {
           text: htmlQuestions[4].wrongAnswer3,
@@ -1096,7 +1241,12 @@ const clickQuestions = () => {
 
       ],
       callback: function (result) {
-        console.log(result);
+        result = parseInt(result)
+        if (result === 1000) {
+          playerOne.score += result
+          $('#player1 > h3').text(playerOne.score)
+          $('#row5col1').hide()
+        }
       }
     });
   })
@@ -1121,30 +1271,163 @@ const clickQuestions = () => {
         },
         {
           text: cssQuestions[4].correctAnswer,
-          value: 1,
+          value: 1000,
         }
 
       ],
       callback: function (result) {
-        console.log(result);
+        result = parseInt(result)
+        if (result === 1000) {
+          playerOne.score += result
+          $('#player1 > h3').text(playerOne.score)
+          $('#row5col2').hide()
+        }
       }
     });
   })
   //javascript
   $('#row5col3').click(function(){
-    bootbox.alert('this button works');
+    // bootbox.alert('this button works');
+    bootbox.prompt({
+      title: javascriptQuestions[4].question,
+      inputType: 'select',
+      inputOptions: [
+        {
+          text: javascriptQuestions[4].correctAnswer,
+          value: 1000,
+        },
+        {
+          text: javascriptQuestions[4].wrongAnswer2,
+          value: 2,
+        },
+        {
+          text: javascriptQuestions[4].wrongAnswer3,
+          value: 3,
+        },
+        {
+          text: javascriptQuestions[4].wrongAnswer1,
+          value: 1,
+        }
+
+      ],
+      callback: function (result) {
+        result = parseInt(result)
+        if (result === 1000) {
+          playerOne.score += result
+          $('#player1 > h3').text(playerOne.score)
+          $('#row5col3').hide()
+        }
+      }
+    });
   })
   //jquery
   $('#row5col4').click(function(){
-    bootbox.alert('this button works');
+    // bootbox.alert('this button works');
+    bootbox.prompt({
+      title: jqueryQuestions[4].question,
+      inputType: 'select',
+      inputOptions: [
+        {
+          text: jqueryQuestions[4].wrongAnswer2,
+          value: 2,
+        },
+        {
+          text: jqueryQuestions[4].wrongAnswer1,
+          value: 4,
+        },
+        {
+          text: jqueryQuestions[4].wrongAnswer3,
+          value: 3,
+        },
+        {
+          text: jqueryQuestions[4].correctAnswer,
+          value: 1000,
+        }
+
+      ],
+      callback: function (result) {
+        result = parseInt(result)
+        if (result === 1000) {
+          playerOne.score += result
+          $('#player1 > h3').text(playerOne.score)
+          $('#row5col4').hide()
+        }
+      }
+    });
   })
   //cli
   $('#row5col5').click(function(){
-    bootbox.alert('this button works');
+    // bootbox.alert('this button works');
+    bootbox.prompt({
+      title: cliQuestions[4].question,
+      inputType: 'select',
+      inputOptions: [
+        {
+          text: cliQuestions[4].wrongAnswer2,
+          value: 2,
+        },
+        {
+          text: cliQuestions[4].correctAnswer,
+          value: 4,
+        },
+        {
+          text: cliQuestions[4].wrongAnswer3,
+          value: 3,
+        },
+        {
+          text: cliQuestions[4].wrongAnswer1,
+          value: 1000,
+        },
+        {
+          text: 'None of the above',
+          value: 5,
+        }
+
+      ],
+      callback: function (result) {
+        result = parseInt(result)
+        if (result === 1000) {
+          playerOne.score += result
+          $('#player1 > h3').text(playerOne.score)
+          $('#row5col5').hide()
+        }
+      }
+    });
   })
   //code quality
   $('#row5col6').click(function(){
-    bootbox.alert('this button works');
+    // bootbox.alert('this button works');
+    bootbox.prompt({
+      title: codeQualityQuestions[4].question,
+      inputType: 'select',
+      inputOptions: [
+        {
+          text: codeQualityQuestions[4].wrongAnswer2,
+          value: 2,
+        },
+        {
+          text: codeQualityQuestions[4].wrongAnswer1,
+          value: 4,
+        },
+        {
+          text: codeQualityQuestions[4].wrongAnswer3,
+          value: 3,
+        },
+        {
+          text: codeQualityQuestions[4].correctAnswer,
+          value: 1000,
+        }
+
+      ],
+      callback: function (result) {
+        result = parseInt(result)
+        if (result === 1000) {
+          playerOne.score += result
+          $('#player1 > h3').text(playerOne.score)
+          $('#row5col6').hide()
+        }
+      }
+    });
   })
 
 }
@@ -1153,36 +1436,67 @@ const clickQuestions = () => {
 
 
 
-
-
-
-
-
-
-
+//Function for buttons to change color when mouse moves over or moves away from them// 
+const highlightButtons = () => {
+  //For loops for buttons to highlight when mouse passes over them//
+  let $button = $('button');
+  for (let i = 0; i < $button.length; i++) {
+    $($button[i]).mouseover(function () {
+      $($button[i]).css('background', 'linear-gradient( #22107F, #856DFF, #4521FF, #371ACC, #42377F)');
+    })
+  }
+  for (let i = 0; i < $button.length; i++) {
+    $($button[i]).mouseout(function () {
+      $($button[i]).css('background', 'linear-gradient(#E02F63, rgba(224, 103, 87, .5), #E58960, rgba(225, 169, 157, .7),rgba(47, 77, 224, .4))');
+    })
+  }
+}
 //Function for invoking a prompt that lets the players put there names on the game board//
 const namePlayers = () => {
-  bootbox.prompt('PLayer 2, please enter your name:', function(result){
-    const $player2name = $('#player2 > h1');
-    $player2name.remove()
-    const $h1 = $('<h1/>')
-    $('#player2').prepend($h1);
-    $h1.append(result)
-  })
+  // bootbox.prompt('PLayer 2, please enter your name:', function(result){
+  //   const $player2name = $('#player2 > h1');
+  //   $player2name.remove()
+  //   const $h1 = $('<h1/>')
+  //   $('#player2').prepend($h1);
+  //   $h1.append(result)
+  //   playerTwo.name = result
+  // })
   bootbox.prompt('Player 1, please enter our name:', function (result) {
     const $player1name = $('#player1 > h1');
     $player1name.remove()
     const $h1 = $('<h1/>');
     $('#player1').prepend($h1);
     $h1.append(result)
+    playerOne.name = result
   })
 }
+//Function to decide player order//
+const playerOrder = () => {
+  bootbox.prompt('Player 2 please choose a number between 1 and 10!', function(result){
+    const p2 = parseInt(result)
+    playerTwo.order = p2
+    
+    console.log(playerTwo.order);
+  })
+  bootbox.prompt('Player 1, please choose a number between 1 and 10!', function(result){
+    const p1 = parseInt(result) 
+    playerOne.order = p1
+    console.log(playerOne.order);
+  })
+
+}
+
 
 //Start game function that is invoked when the alien spaceship Image is clicked//
 const startGame = () => {
-  console.log('The Game Has Started!!')
+ 
+  // const dice = Math.floor((Math.random() * 11))
+  // console.log(dice);
+  
+  highlightButtons()
   namePlayers()
   clickQuestions()
+  
 }
 
 

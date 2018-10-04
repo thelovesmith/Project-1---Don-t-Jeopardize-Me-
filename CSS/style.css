@@ -90,7 +90,14 @@ justify-content: space-around;
   border-radius: 15px;  
   background: Linear-gradient(rgba(206, 109, 255, .2), rgba(200, 100, 245, .03));
 }
-#player2{
+/* #player2{
+  color: #FFC71B;
+  order: 3;
+  margin-top: 10px;
+  border-radius: 15px;
+  background: Linear-gradient(rgba(206, 109, 255, .2), rgba(200, 100, 245, .03));
+} */
+#timer{
   color: #FFC71B;
   order: 3;
   margin-top: 10px;
