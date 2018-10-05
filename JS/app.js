@@ -1,5 +1,8 @@
 //Alert to inform users how to start the game//
-bootbox.alert("Please click the spaceship to start the game.....");
+
+
+
+
   
 ////////////////////////////////////////////////////////////
 //Arrays holding question objects//
@@ -243,7 +246,7 @@ const cliQuestions  = [
   }, 
   {
    question: `Which option below is the correct way to commit your staged content to your current working directory?`,
-   correctAnswer: `git commit -m 'Commit 1 - I am committing to this this disastrous project'`,
+   correctAnswer: `git commit -m 'Commit 1 - I am committing to this disastrous project'`,
    wrongAnswer1: `git commit m "Commit 1.5 - Holy Moly, what am I getting myself into?"`,
    wrongAnswer2: `git commit`,
    wrongAnswer3: `git commit -m Commit 1 - I dont think I'm making this deadline`,
@@ -300,13 +303,18 @@ const codeQualityQuestions = [
 const playerOne = {
   score: 0,
   order: 0,
-  name: ''
+  name: '',
+  timer: 0,
+  playerOneTurn: false
+  
 
 };
 const playerTwo = {
   score: 0,
   order: 0,
-  name: '' 
+  name: '',
+  timer: 0,
+  playerTwoTurn: false
 };
 
   ////////////////////////////////////////////////////////////
@@ -1368,7 +1376,7 @@ const clickQuestions = () => {
         },
         {
           text: cliQuestions[4].correctAnswer,
-          value: 4,
+          value: 1000,
         },
         {
           text: cliQuestions[4].wrongAnswer3,
@@ -1433,8 +1441,18 @@ const clickQuestions = () => {
 }
 
 
-
-
+//function to set and stop timer for game play// 
+const timerFunction = () => {
+  playerOne.timer += 1
+  $('#timer > h2').text(playerOne.timer);
+}
+//Primary alert function when window  loads// 
+bootbox.alert({
+  message: "Please click the spaceship to start the game.....",
+  callback: function () {
+    namePlayers()
+  }
+})
 
 //Function for buttons to change color when mouse moves over or moves away from them// 
 const highlightButtons = () => {
@@ -1453,6 +1471,7 @@ const highlightButtons = () => {
 }
 //Function for invoking a prompt that lets the players put there names on the game board//
 const namePlayers = () => {
+  
   // bootbox.prompt('PLayer 2, please enter your name:', function(result){
   //   const $player2name = $('#player2 > h1');
   //   $player2name.remove()
@@ -1468,41 +1487,94 @@ const namePlayers = () => {
     $('#player1').prepend($h1);
     $h1.append(result)
     playerOne.name = result
+   
+    bootbox.alert({
+      message: `Hello ${playerOne.name}!! Let's test your programming knowledge!`,
+      callback: function () {
+        bootbox.alert("Once you start the game you will have 60 seconds to answer as many questions possible before your time is up. Good luck!!!");
+      }
+    })
   })
 }
 //Function to decide player order//
-const playerOrder = () => {
-  bootbox.prompt('Player 2 please choose a number between 1 and 10!', function(result){
-    const p2 = parseInt(result)
-    playerTwo.order = p2
-    
-    console.log(playerTwo.order);
-  })
-  bootbox.prompt('Player 1, please choose a number between 1 and 10!', function(result){
-    const p1 = parseInt(result) 
-    playerOne.order = p1
-    console.log(playerOne.order);
-  })
+// const playerOrder = () => { 
+//   playerOne.order = Math.floor((Math.random() * 21))
+//   playerTwo.order = Math.floor((Math.random() * 21))
+//   if (playerOne.order > playerTwo.order) {
+//     bootbox.alert('Player One!! Your turn is up!');
+//     playerOneTurn = true
+//   }
+//   if (playerTwo.order > playerOne.order) {
+//     bootbox.alert('PLayer Two!! Your turn is up!');
+//     playerTwoTurn = true 
+//   }
+// }
 
-}
-
+//Function for deciding the winner of the game//
+// const gameWinner = () => {
+//   if (playerOne.score > playerTwo.score) {
+//     bootbox.alert(`Congrats ${playerOne.name}!!! You are the winner!!`) 
+//   }
+//   if (playerTwo.score > playerOne.score) {
+//     bootbox.alert(`Congrats ${playerTwo.name}!!! You are the winner!!`)
+//   }
+// }
 
 //Start game function that is invoked when the alien spaceship Image is clicked//
 const startGame = () => {
+  if (playerOne.timer === 0) {
+    
+    const playerOneInterval = setInterval(() => {
+      playerOne.playerOneTurn = true 
+      timerFunction()
+      if (playerOne.timer === 60) {
+       
+        if (playerOne.score >= 3000 && playerOne.score < 5000) {
+          bootbox.alert(`${playerOne.name}, you did so-so. How about reviewing some more and trying again!!`)
+        }
+        if (playerOne.score >= 5000) {
+          bootbox.alert(`Damn ${playerOne.name} you got the juice!!! Good job! Sadly the high score is 6000 so you still have lots to learn grass hopper!`)
+        }
+        if (playerOne.score <= 2000) {
+          bootbox.alert(`Okay ${playerOne.name}..... you can do better. How about you give it another try.`)
+        }
+        bootbox.alert(`Your score is ${playerOne.score}`)
+        bootbox.alert('YOUR TIME IS UP!!!')
+        playerOne.playerOneTurn = false
+        
+        clearInterval(playerOneInterval)
+      }
+    }, 1000)
+  }
+  
+  //PLayer To time interval//
+  // if (playerOne.timer === 60) {
+  //   bootbox.alert(`${playerTwo.name}, it is now your turn!! Show them who is boss!`)
+  //   const playerTwoInterval = setInterval(() => {
+  //     playerTwo.playerTwoTurn = true 
+  //     timerFunction()
+  //     if (playerOne.timer === 120) {
+  //       bootbox.alert('YOUR TIME IS UP!!!')
+  //       playerTwo.playerTwoTurn = false
+  //       clearInterval(playerTwoInterval)
+  //     }
+  //   }, 1000)
+    
+  // }
+  
  
-  // const dice = Math.floor((Math.random() * 11))
-  // console.log(dice);
-  
-  highlightButtons()
-  namePlayers()
-  clickQuestions()
-  
+  highlightButtons();
+ 
 }
+
+//invoking player name function//
 
 
 //Event handlers and functions for Spaceship game start button//
 const $spaceship = $('#spaceship')
 $spaceship.click(startGame);
+//Function that activate button functionality 
+clickQuestions();
 $spaceship.mouseover(function(){
   //function to highlight spaceship when mouse is over the image
   $spaceship.css('background', 'linear-gradient(#E02F63, rgba(224, 103, 87, .2), #E58960, rgba(225, 169, 157, .1),rgba(47, 77, 224, .05))')
@@ -1524,18 +1596,3 @@ $spaceship.mouseout(function(){
 
 
 
-//Functions for highlighting buttons when mouse passes over them using Vanilla JS//
-    // function focusFunction() {
-    //   document.getElementById("myInput").style.background = "yellow";
-    // }
-    // function blurFunction() {
-    //   document.getElementById("myInput").style.background = "linear-gradient(#E02F63, rgba(224, 103, 87, .5), #E58960, rgba(225, 169, 157, .7),rgba(47, 77, 224, .4))";
-    // }
-//Functions for highlighting buttons when mouse passes over them using JQuery//
-    // let $example = $('#example');
-    // $example.mouseout(function(){
-    //   $example.css('background', 'linear-gradient(#E02F63, rgba(224, 103, 87, .5), #E58960, rgba(225, 169, 157, .7),rgba(47, 77, 224, .4))');
-    // })
-    // $example.mouseover(function(){
-    //   $example.css('background', 'yellow');
-    // })

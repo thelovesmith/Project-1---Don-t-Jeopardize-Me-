@@ -79,7 +79,7 @@ justify-content: space-around;
 }
 #spaceship{
   border-radius: 20px;
-  order:2;
+  order:1;
   margin-top: 10px;
  ;
 }
@@ -99,7 +99,7 @@ justify-content: space-around;
 } */
 #timer{
   color: #FFC71B;
-  order: 3;
+  order: 2;
   margin-top: 10px;
   border-radius: 15px;
   background: Linear-gradient(rgba(206, 109, 255, .2), rgba(200, 100, 245, .03));
