@@ -32,11 +32,11 @@ Online, browser based Multiplayer, Multiple Choice  Jeopardy Game
 ----
 ## Struggles 
 
-*Implementing Bootstrap and Bootbox
-*Creating several arrays of objects with questions and answers and point values
-*Adding multiplayer functionality 
-*Game Object
-*Code Quality Questions
+* Implementing Bootstrap and Bootbox
+* Creating several arrays of objects with questions and answers and point values
+* Adding multiplayer functionality 
+* Game Object
+* Code Quality Questions
 
 
 ----
@@ -53,7 +53,7 @@ Const yourPlanetMustGo = [
   wrongAnser1: 'lorem ipsum',
   wrongAnswer2: 'lorem ipsum',
   wrongAnswer3: 'Lorem ipsum',
-  Score: 200
+  value: 200
 }
 ]
 Const 
