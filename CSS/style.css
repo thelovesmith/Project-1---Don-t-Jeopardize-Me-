@@ -3,6 +3,16 @@ body{
   background-image: url(../Images/download.jpeg);
   background-size: cover;
 }
+header{
+  font-family: 'Righteous', sans-serif;
+  font-size: 50px;
+  background-image: linear-gradient( #22107F, #856DFF, #4521FF, #371ACC, #42377F);
+  background-size: contain;
+  color: #FFC71B;
+  text-shadow: 3px 2px 4px #000000;
+  text-align: center;
+  letter-spacing: .15em;
+}
 /* .container{
   flex-direction: column;
 

@@ -40,6 +40,10 @@ Online, browser based Multiplayer, Multiple Choice  Jeopardy Game
 *Game Object
 *Code Quality Questions
 
+----
+## Wireframe 
+
+![alt Don't Jeopardize Me Wireframe](Images/Jeopardize Me.png)
 
 ----
 ## Object Example

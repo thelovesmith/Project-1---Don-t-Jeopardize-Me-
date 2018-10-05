@@ -141,10 +141,10 @@ const javascriptQuestions = [
                   console.log('boohoo')
                 }
                 typeof (shoo)`,
-    correctAnswer: `function`,
+    correctAnswer: `Undefined`,
     wrongAnswer1: `NaN`,
     wrongAnswer2: `True`,
-    wrongAnswer3: `Undefined`,
+    wrongAnswer3: `Function`,
     value: 600
   },
   {
@@ -1448,7 +1448,7 @@ const timerFunction = () => {
 }
 //Primary alert function when window  loads// 
 bootbox.alert({
-  message: "Please click the spaceship to start the game.....",
+  message: "Welcome to Don't Jeopardize Me!! A fun way to find out how much you really don't know about programming. P.S. It's not too late to get that refund!!",
   callback: function () {
     namePlayers()
   }
@@ -1491,7 +1491,7 @@ const namePlayers = () => {
     bootbox.alert({
       message: `Hello ${playerOne.name}!! Let's test your programming knowledge!`,
       callback: function () {
-        bootbox.alert("Once you start the game you will have 60 seconds to answer as many questions possible before your time is up. Good luck!!!");
+        bootbox.alert("Once you start the game you will have 60 seconds to answer as many questions possible before your time is up. To start the game please click on our spaceship. Good luck!!!");
       }
     })
   })
