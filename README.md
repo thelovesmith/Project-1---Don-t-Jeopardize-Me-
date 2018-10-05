@@ -43,7 +43,7 @@ Online, browser based Multiplayer, Multiple Choice  Jeopardy Game
 ----
 ## Wireframe 
 
-![alt Don't Jeopardize Me Wireframe](Images/Jeopardize Me.png)
+![Don't Jeopardize Me Wireframe](Images/wireframe.png)
 
 ----
 ## Object Example
