@@ -34,11 +34,10 @@ Online, browser based Multiplayer, Multiple Choice  Jeopardy Game
 
 *Implementing Bootstrap and Bootbox
 *Creating several arrays of objects with questions and answers and point values
-*Each array will be made up of objects with questions from a  specific topic 
-*Generating questions
-*Wireframe 
+*Adding multiplayer functionality 
 *Game Object
 *Code Quality Questions
+
 
 ----
 ## Wireframe 
