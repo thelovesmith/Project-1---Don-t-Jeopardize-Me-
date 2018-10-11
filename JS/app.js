@@ -1496,7 +1496,7 @@ const namePlayers = () => {
     })
   })
 }
-//Function to decide player order//
+//Function to decide player order and who will get points when the questions are answered//
 // const playerOrder = () => { 
 //   playerOne.order = Math.floor((Math.random() * 21))
 //   playerTwo.order = Math.floor((Math.random() * 21))
