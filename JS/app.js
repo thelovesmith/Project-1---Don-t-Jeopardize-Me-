@@ -40,7 +40,7 @@ const htmlQuestions = [
     value: 800
   },
   {
-    question: 'In HTML, type of content are onblur and onfocus considered?',
+    question: 'In HTML, what type of content are onblur and onfocus considered?',
     correctAnswer: 'Event attributes',
     wrongAnswer1: 'HTML elements',
     wrongAnswer2: 'Style attributes',
