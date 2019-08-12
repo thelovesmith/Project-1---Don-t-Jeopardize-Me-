@@ -8,7 +8,7 @@
 //Arrays holding question objects//
 const htmlQuestions = [
   {
-    question: 'What does HTML stand for?',
+    question: 'What does the acronym HTML stand for?',
     correctAnswer: 'Hyper Text Markup Language',
     wrongAnswer1: 'Hyperlinks and Text Markup Language',
     wrongAnswer2: 'Home Tool Markup Language',
