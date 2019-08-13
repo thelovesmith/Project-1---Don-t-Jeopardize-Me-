@@ -1533,7 +1533,7 @@ const startGame = () => {
           bootbox.alert(`${playerOne.name}, you did so-so. How about reviewing some more and trying again!!`)
         }
         if (playerOne.score >= 5000) {
-          bootbox.alert(`Damn ${playerOne.name} you got the juice!!! Good job! Sadly the high score is 6000 so you still have lots to learn grass hopper!`)
+          bootbox.alert(`Damn ${playerOne.name} you got the juice!!! Good job! Sadly the high score is 8000 so you still have lots to learn grass hopper!`)
         }
         if (playerOne.score <= 2000) {
           bootbox.alert(`Okay ${playerOne.name}..... you can do better. How about you give it another try.`)
