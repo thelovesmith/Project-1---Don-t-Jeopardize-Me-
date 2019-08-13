@@ -1448,7 +1448,7 @@ const timerFunction = () => {
 }
 //Primary alert function when window  loads// 
 bootbox.alert({
-  message: "Welcome to Don't Jeopardize Me!! A fun way to find out how much you really don't know about programming. P.S. It's not too late to get that refund!!",
+  message: "Welcome to Don't Jeopardize Me!! A fun and ruthless way to find out how much you really don't know about web programming. P.S. It's not too late to give up!!",
   callback: function () {
     namePlayers()
   }
