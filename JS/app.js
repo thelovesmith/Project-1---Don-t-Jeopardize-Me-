@@ -1527,7 +1527,7 @@ const startGame = () => {
     const playerOneInterval = setInterval(() => {
       playerOne.playerOneTurn = true 
       timerFunction()
-      if (playerOne.timer === 60) {
+      if (playerOne.timer === 120) {
        
         if (playerOne.score >= 3000 && playerOne.score < 5000) {
           bootbox.alert(`${playerOne.name}, you did so-so. How about reviewing some more and trying again!!`)
